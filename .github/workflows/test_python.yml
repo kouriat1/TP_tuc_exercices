@@ -1,17 +1,16 @@
-name : Python CI
+name: Python CI
 
-on: 
+on:
   workflow_dispatch:
-  push:
-  branches:
+  push: 
+    branches: 
       - main
 
 jobs:
-tests : 
-  runs-on : ubuntu-latest
-  steps: 
-    - uses: actions/checkout@v3
-    - name: Print folder 
-    run : 
-      ls 
-     - name: 
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Print folder
+        run: 
+          ls
