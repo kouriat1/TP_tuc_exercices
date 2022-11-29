@@ -1,24 +1,21 @@
 name: Python CI
- 
+
 on:
   workflow_dispatch:
   push: 
-  branches:
-     - main
- 
-jobs:
+    branches: 
+      - main
 
-  tests: 
-      runs-on: ubuntu-latest
- 
-  steps:
-     - uses: actions/checkout@v3
-      name: Checkout my project
- 
-    - name: Install Python 3.10 
-      uses: actions/setup-python@v4
-      with: 
-        python-version: "3.10"
-     - name: Install requirements
-      run: |
-      python -m pip install -r requirements.txt
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout my project
+      - uses: actions/setup-python@v4
+        name: Install Python 3.10     
+        with:
+          python-version: "3.10"
+      - name: Install requirements      
+        run: |
+          python -m pip install -r requirements.txt
